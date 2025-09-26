@@ -16,9 +16,37 @@
       padding: 2rem;
       text-align: center;
     }
-    .product-thumbnails img {
+    .product-thumbnails {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .product {
       width: 180px;
-      margin: 0.5rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 1rem;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .price {
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .buy-button {
+      background: #1a2b4c;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
     h1, h2 {
       margin-bottom: 1rem;
@@ -63,6 +91,11 @@
       margin-top: 2rem;
       font-size: 1.2rem;
     }
+    footer p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -72,9 +105,21 @@
     <h1>Transform Your Health Naturally</h1>
     <p>Choose your Body Blueprint®: Beginner, Intermediary, or Elite Plus+</p>
     <div class="product-thumbnails">
-      <img src="images/beginner.png" alt="Beginner Guide" />
-      <img src="images/intermediary.png" alt="Intermediary Guide" />
-      <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
+      <div class="product">
+        <img src="images/beginner.png" alt="Beginner Guide" />
+        <div class="price">$4.99</div>
+        <a class="buy-button" href="#">Buy Beginner</a>
+      </div>
+      <div class="product">
+        <img src="images/intermediary.png" alt="Intermediary Guide" />
+        <div class="price">$6.99</div>
+        <a class="buy-button" href="#">Buy Intermediary</a>
+      </div>
+      <div class="product">
+        <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
+        <div class="price">$9.99</div>
+        <a class="buy-button" href="#">Buy Elite Plus+</a>
+      </div>
     </div>
   </header>
 
@@ -125,11 +170,24 @@
   <!-- 🔁 Footer Section -->
   <footer>
     <div class="product-thumbnails">
-      <img src="images/beginner.png" alt="Beginner Guide" />
-      <img src="images/intermediary.png" alt="Intermediary Guide" />
-      <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
+      <div class="product">
+        <img src="images/beginner.png" alt="Beginner Guide" />
+        <div class="price">$4.99</div>
+        <a class="buy-button" href="#">Buy Beginner</a>
+      </div>
+      <div class="product">
+        <img src="images/intermediary.png" alt="Intermediary Guide" />
+        <div class="price">$6.99</div>
+        <a class="buy-button" href="#">Buy Intermediary</a>
+      </div>
+      <div class="product">
+        <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
+        <div class="price">$9.99</div>
+        <a class="buy-button" href="#">Buy Elite Plus+</a>
+      </div>
     </div>
     <strong>Body Blueprint®</strong>
+    <p>&copy; Body Blueprint® 2025</p>
   </footer>
 
   <!-- 🔄 Carousel Script -->
@@ -145,4 +203,3 @@
 
 </body>
 </html>
-
