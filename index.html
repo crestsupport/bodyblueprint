@@ -1,56 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Body Blueprint</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Body Blueprint</h1>
-    <p>Science-backed simplicity for lasting health.</p>
-  </header>
+<!-- 💬 Testimonial Carousel -->
+<section class="testimonial-carousel">
+  <h2>Real Results from Real People</h2>
+  <div class="carousel">
+    <div class="testimonial active">“I didn’t want a long, drawn-out course. I just needed to know what to eat and how to move. Body Blueprint delivered in less than 60 days—17 pounds gone.”<br><strong>— John C., Phoenix, AZ</strong></div>
+    <div class="testimonial">“GLP-1 meds scared me. I wanted results without side effects. Body Blueprint gave me that. I’m down 26 pounds and my doctor is stunned.”<br><strong>— Marcus T., Tampa, FL</strong></div>
+    <div class="testimonial">“Beginner was so clear and doable. I didn’t feel judged—I felt empowered. Down 14 pounds and my blood pressure normalized.”<br><strong>— Tanya S., Boise, ID</strong></div>
+    <div class="testimonial">“Elite Plus+ respected my time. I dropped 22 pounds and sleep better than I have in years.”<br><strong>— Andre M., Chicago, IL</strong></div>
+    <div class="testimonial">“I’m 62 and thought it was too late. Turns out, it wasn’t. I feel alive again.”<br><strong>— Barbara J., Santa Fe, NM</strong></div>
+  </div>
+</section>
 
-  <section id="about">
-    <h2>🔬 About Body Blueprint</h2>
-    <p>
-      We've removed all the fluff. No gimmicks, no guesswork—just the most effective, <strong>science-backed strategies</strong> for reaching and maintaining your ideal weight, building healthy muscle, controlling blood sugar levels, and achieving lasting wellness.
-    </p>
-    <p>
-      Our plans are built on <strong>proven methods</strong> from the latest nutritional and exercise science. Every recommendation is grounded in research—not trends. We’ve curated the <strong>most efficient foods</strong> for delivering optimal nutrition to your body, chosen specifically for their ability to fuel performance, recovery, and metabolic health.
-    </p>
-    <p>
-      Whether you're just starting out or pushing toward elite-level conditioning, Body Blueprint gives you the tools to succeed—<strong>quickly, simply, and sustainably</strong>.
-    </p>
-  </section>
+<style>
+.testimonial-carousel {
+  background: #f8f9fc;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+.testimonial-carousel h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #1a2b4c;
+}
+.carousel {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+}
+.testimonial {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  font-size: 1rem;
+  color: #333;
+  padding: 0 1rem;
+}
+.testimonial.active {
+  opacity: 1;
+  position: relative;
+}
+</style>
 
-  <section id="plans">
-    <h2>🎯 Choose Your Plan</h2>
-
-    <div class="plan beginner">
-      <h3>🟢 Beginner Plan – <strong>$4.99 USD</strong></h3>
-      <p>Simple meals, bodyweight workouts, and foundational supplements.</p>
-      <button onclick="selectPlan('beginner')">Buy Beginner Plan</button>
-    </div>
-
-    <div class="plan intermediary">
-      <h3>🔵 Intermediary Plan – <strong>$6.99 USD</strong></h3>
-      <p>Macro-aware meals, gym/home workouts, and expanded recovery tools.</p>
-      <button onclick="selectPlan('intermediary')">Buy Intermediary Plan</button>
-    </div>
-
-    <div class="plan elite">
-      <h3>🔴 Elite Plus+ Plan – <strong>$9.99 USD</strong></h3>
-      <p>Biohacked meals, elite training, and advanced supplementation.</p>
-      <button onclick="selectPlan('elite')">Buy Elite Plus+ Plan</button>
-    </div>
-  </section>
-
-  <script>
-    function selectPlan(tier) {
-      localStorage.setItem("selectedTier", tier);
-      window.location.href = "success.html";
-    }
-  </script>
-</body>
-</html>
+<script>
+let index = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+setInterval(() => {
+  testimonials[index].classList.remove('active');
+  index = (index + 1) % testimonials.length;
+  testimonials[index].classList.add('active');
+}, 5000);
+</script>
