@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Body Blueprint</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Body Blueprint</h1>
+    <p>Precision Fitness & Nutrition Plans</p>
+  </header>
+
+  <section id="quiz">
+    <form id="userForm">
+      <label>Gender:
+        <select name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+      <label>Age: <input type="number" name="age" required /></label>
+      <label>Weight (kg): <input type="number" name="weight" required /></label>
+      <label>Height (cm): <input type="number" name="height" required /></label>
+      <label>Goal:
+        <select name="goal">
+          <option value="weight_loss">Weight Loss</option>
+          <option value="toning">Toning</option>
+          <option value="muscle_gain">Muscle Gain</option>
+        </select>
+      </label>
+      <label>Experience Level:
+        <select name="level">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="elite">Elite (Plus+)</option>
+        </select>
+      </label>
+      <button type="submit">Continue</button>
+    </form>
+  </section>
+
+  <section id="payment">
+    <h2>Select Your Plan</h2>
+    <a href="https://buy.stripe.com/test_abc123" target="_blank"><button>Beginner – $9.99</button></a>
+    <a href="https://buy.stripe.com/test_def456" target="_blank"><button>Intermediate – $19.99</button></a>
+    <a href="https://buy.stripe.com/test_ghi789" target="_blank"><button>Elite Plus+ – $29.99</button></a>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
