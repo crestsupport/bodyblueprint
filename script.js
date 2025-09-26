@@ -1,68 +1,88 @@
-document.getElementById("userForm")?.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(e.target));
-  localStorage.setItem("userData", JSON.stringify(data));
-  alert("Form saved! Now choose your plan.");
-});
-
-function generatePlan() {
-  const data = JSON.parse(localStorage.getItem("userData"));
-  if (!data) return;
-
-  const workout = generateWorkout(data);
-  const nutrition = generateNutrition(data);
-  document.getElementById("plan").innerHTML = workout + nutrition;
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function generateWorkout({ age, gender, goal, level }) {
-  let plan = "";
-  if (goal === "weight_loss") {
-    plan = level === "beginner" ? "3x/week full-body circuits + walking" :
-           level === "intermediate" ? "HIIT + resistance 4x/week" :
-           "MetCon + heart rate zones + carb cycling";
-  } else if (goal === "muscle_gain") {
-    plan = level === "beginner" ? "Push/pull/legs 3x/week" :
-           level === "intermediate" ? "Hypertrophy 5x/week" :
-           "Periodized strength + volume tracking";
-  } else {
-    plan = level === "beginner" ? "Upper/lower split + core" :
-           level === "intermediate" ? "Progressive overload + tempo" :
-           "Precision sculpting + recovery optimization";
-  }
-  return `<h3>Workout Plan</h3><p>${plan}</p>`;
-}
-
-function generateNutrition({ gender, age, weight, height, goal }) {
-  weight = parseFloat(weight);
-  height = parseFloat(height);
-  age = parseInt(age);
-  const bmr = gender === "male"
-    ? 10 * weight + 6.25 * height - 5 * age + 5
-    : 10 * weight + 6.25 * height - 5 * age - 161;
-  const multiplier = goal === "weight_loss" ? 1.2 : goal === "toning" ? 1.4 : 1.6;
-  const calories = Math.round(bmr * multiplier);
-  const protein = Math.round(weight * (goal === "muscle_gain" ? 2.0 : 1.5));
-  return `<h3>Nutrition Plan</h3>
-    <p>Calories: ${calories} kcal/day</p>
-    <p>Protein: ${protein}g/day</p>
-    <p>Meal Timing: 4–5 meals/day with protein in each</p>`;
-}
-
-function downloadPDF() {
+function downloadMasterGuide() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  const data = JSON.parse(localStorage.getItem("userData"));
-  const workout = generateWorkout(data).replace(/<[^>]+>/g, "");
-  const nutrition = generateNutrition(data).replace(/<[^>]+>/g, "");
+  const tier = localStorage.getItem("selectedTier");
+
+  if (!tier) {
+    alert("No plan selected. Please return to the homepage and choose a plan.");
+    return;
+  }
 
   doc.setFontSize(18);
-  doc.text("Body Blueprint Plan", 20, 20);
+  doc.text(`Body Blueprint – ${capitalize(tier)} Master Guide`, 20, 20);
+  doc.setFontSize(12);
+  doc.text("⚠️ Consult your medical professional before starting any nutrition or fitness program.", 20, 30);
+
+  // Nutrition Intro
   doc.setFontSize(14);
-  doc.text("Workout Plan:", 20, 40);
-  doc.text(workout, 20, 50);
-  doc.text("Nutrition Plan:", 20, 70);
-  doc.text(nutrition, 20, 80);
-  doc.save("BodyBlueprint_Plan.pdf");
+  doc.text("🍽️ Nutrition Strategy", 20, 40);
+  doc.setFontSize(11);
+  doc.text(getNutritionIntro(tier), 20, 50);
+
+  // Meals
+  const meals = getMealsByTier(tier);
+  let y = 60;
+  ["Breakfasts", "Lunches", "Dinners"].forEach((section) => {
+    doc.setFontSize(13);
+    doc.text(`🍴 ${section}`, 20, y);
+    y += 10;
+    meals[section.toLowerCase()].forEach((meal, i) => {
+      doc.setFontSize(10);
+      doc.text(`${i + 1}. ${meal.name} – ${meal.calories} kcal`, 20, y);
+      y += 6;
+      doc.text(`Prep: ${meal.prepTime} | Ingredients: ${meal.ingredients.join(", ")}`, 20, y);
+      y += 8;
+    });
+    y += 10;
+  });
+
+  // Fitness
+  const fitness = getFitnessByTier(tier);
+  doc.setFontSize(14);
+  doc.text("🏋️ Fitness Strategy", 20, y);
+  y += 10;
+
+  ["Non-Gym", "Gym"].forEach((mode) => {
+    doc.setFontSize(12);
+    doc.text(`${mode} Workouts`, 20, y);
+    y += 8;
+    fitness[mode.toLowerCase()].forEach((exercise, i) => {
+      doc.setFontSize(10);
+      doc.text(`${i + 1}. ${exercise}`, 20, y);
+      y += 6;
+    });
+    y += 10;
+  });
+
+  // Supplements
+  doc.setFontSize(12);
+  doc.text("💊 Supplement Guidance", 20, y);
+  y += 8;
+  fitness.supplements.forEach((supplement) => {
+    doc.setFontSize(10);
+    doc.text(`• ${supplement}`, 20, y);
+    y += 6;
+  });
+
+  doc.save(`body-blueprint-${tier}-guide.pdf`);
 }
 
-if (document.getElementById("plan")) generatePlan();
+// Placeholder functions for content
+function getMealsByTier(tier) {
+  // Return the full meal arrays for each tier
+  // You already have these from our previous messages
+}
+
+function getFitnessByTier(tier) {
+  // Return the full fitness arrays for each tier
+  // You already have these from our previous messages
+}
+
+function getNutritionIntro(tier) {
+  // Return the nutrition intro string for each tier
+  // You already have these from our previous messages
+}
