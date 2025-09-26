@@ -21,14 +21,15 @@
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
     .product {
-      width: 180px;
+      width: 220px;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       padding: 1rem;
+      text-align: center;
     }
     .product img {
       width: 100%;
@@ -37,6 +38,12 @@
     .price {
       font-weight: bold;
       margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .description {
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+      color: #333;
     }
     .buy-button {
       background: #1a2b4c;
@@ -108,16 +115,19 @@
       <div class="product">
         <img src="images/beginner.png" alt="Beginner Guide" />
         <div class="price">$4.99</div>
+        <div class="description">Perfect for those starting their wellness journey. Simple meals, easy workouts, and positive reinforcement.</div>
         <a class="buy-button" href="#">Buy Beginner</a>
       </div>
       <div class="product">
         <img src="images/intermediary.png" alt="Intermediary Guide" />
         <div class="price">$6.99</div>
+        <div class="description">For those ready to level up. Structured routines, performance tracking, and deeper nutritional guidance.</div>
         <a class="buy-button" href="#">Buy Intermediary</a>
       </div>
       <div class="product">
         <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
         <div class="price">$9.99</div>
+        <div class="description">Advanced optimization for high performers. Biohacked strategies, recovery protocols, and elite-level results.</div>
         <a class="buy-button" href="#">Buy Elite Plus+</a>
       </div>
     </div>
@@ -142,15 +152,15 @@
     <div class="offer-grid">
       <div class="offer">
         <h3>Beginner</h3>
-        <p>Perfect for those starting their wellness journey. Simple meals, easy workouts, and positive reinforcement.</p>
+        <p>Start strong with simple, actionable steps. Ideal for those new to fitness and nutrition.</p>
       </div>
       <div class="offer">
         <h3>Intermediary</h3>
-        <p>For those ready to level up. Structured routines, performance tracking, and deeper nutritional guidance.</p>
+        <p>Build momentum with structured plans and deeper nutritional insight. Great for those ready to level up.</p>
       </div>
       <div class="offer">
         <h3>Elite Plus+</h3>
-        <p>Advanced optimization for high performers. Biohacked strategies, recovery protocols, and elite-level results.</p>
+        <p>Push boundaries with advanced strategies and recovery protocols. Designed for high performers and biohackers.</p>
       </div>
     </div>
   </section>
@@ -173,33 +183,16 @@
       <div class="product">
         <img src="images/beginner.png" alt="Beginner Guide" />
         <div class="price">$4.99</div>
+        <div class="description">Perfect for those starting their wellness journey. Simple meals, easy workouts, and positive reinforcement.</div>
         <a class="buy-button" href="#">Buy Beginner</a>
       </div>
       <div class="product">
         <img src="images/intermediary.png" alt="Intermediary Guide" />
         <div class="price">$6.99</div>
+        <div class="description">For those ready to level up. Structured routines, performance tracking, and deeper nutritional guidance.</div>
         <a class="buy-button" href="#">Buy Intermediary</a>
       </div>
       <div class="product">
         <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
         <div class="price">$9.99</div>
-        <a class="buy-button" href="#">Buy Elite Plus+</a>
-      </div>
-    </div>
-    <strong>Body Blueprint®</strong>
-    <p>&copy; Body Blueprint® 2025</p>
-  </footer>
-
-  <!-- 🔄 Carousel Script -->
-  <script>
-    let index = 0;
-    const testimonials = document.querySelectorAll('.testimonial');
-    setInterval(() => {
-      testimonials[index].classList.remove('active');
-      index = (index + 1) % testimonials.length;
-      testimonials[index].classList.add('active');
-    }, 5000);
-  </script>
-
-</body>
-</html>
+        <div class="description">Advanced optimization for high performers. Biohacked strategies, recovery protocols, and elite-level results.</div>
