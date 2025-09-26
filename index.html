@@ -1,52 +1,148 @@
-<!-- 💬 Testimonial Carousel -->
-<section class="testimonial-carousel">
-  <h2>Real Results from Real People</h2>
-  <div class="carousel">
-    <div class="testimonial active">“I didn’t want a long, drawn-out course. I just needed to know what to eat and how to move. Body Blueprint delivered in less than 60 days—17 pounds gone.”<br><strong>— John C., Phoenix, AZ</strong></div>
-    <div class="testimonial">“GLP-1 meds scared me. I wanted results without side effects. Body Blueprint gave me that. I’m down 26 pounds and my doctor is stunned.”<br><strong>— Marcus T., Tampa, FL</strong></div>
-    <div class="testimonial">“Beginner was so clear and doable. I didn’t feel judged—I felt empowered. Down 14 pounds and my blood pressure normalized.”<br><strong>— Tanya S., Boise, ID</strong></div>
-    <div class="testimonial">“Elite Plus+ respected my time. I dropped 22 pounds and sleep better than I have in years.”<br><strong>— Andre M., Chicago, IL</strong></div>
-    <div class="testimonial">“I’m 62 and thought it was too late. Turns out, it wasn’t. I feel alive again.”<br><strong>— Barbara J., Santa Fe, NM</strong></div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Blueprint®</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fc;
+      color: #1a2b4c;
+    }
+    header, section, footer {
+      padding: 2rem;
+      text-align: center;
+    }
+    .product-thumbnails img {
+      width: 180px;
+      margin: 0.5rem;
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    .offer-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .offer {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 1rem;
+      max-width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .testimonial-carousel {
+      background: #eaf0ff;
+      padding: 2rem;
+    }
+    .carousel {
+      position: relative;
+      height: 120px;
+      overflow: hidden;
+    }
+    .testimonial {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      font-size: 1rem;
+      color: #333;
+      padding: 0 1rem;
+    }
+    .testimonial.active {
+      opacity: 1;
+      position: relative;
+    }
+    footer strong {
+      display: block;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
 
-<style>
-.testimonial-carousel {
-  background: #f8f9fc;
-  padding: 2rem;
-  text-align: center;
-  font-family: 'Inter', sans-serif;
-}
-.testimonial-carousel h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #1a2b4c;
-}
-.carousel {
-  position: relative;
-  height: 120px;
-  overflow: hidden;
-}
-.testimonial {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  font-size: 1rem;
-  color: #333;
-  padding: 0 1rem;
-}
-.testimonial.active {
-  opacity: 1;
-  position: relative;
-}
-</style>
+  <!-- 🔝 Hero Section -->
+  <header>
+    <h1>Transform Your Health Naturally</h1>
+    <p>Choose your Body Blueprint®: Beginner, Intermediary, or Elite Plus+</p>
+    <div class="product-thumbnails">
+      <img src="images/beginner.png" alt="Beginner Guide" />
+      <img src="images/intermediary.png" alt="Intermediary Guide" />
+      <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
+    </div>
+  </header>
 
-<script>
-let index = 0;
-const testimonials = document.querySelectorAll('.testimonial');
-setInterval(() => {
-  testimonials[index].classList.remove('active');
-  index = (index + 1) % testimonials.length;
-  testimonials[index].classList.add('active');
-}, 5000);
-</script>
+  <!-- 🧠 GLP-1 Message -->
+  <section>
+    <h2>GLP-1 Like Results—Without the Risk</h2>
+    <p>
+      The GLP-1 class of medications may promise weight loss, but they come with unknown risks and side effects. 
+      Body Blueprint® delivers similar outcomes—naturally. No prescriptions. No guesswork.
+    </p>
+    <p>
+      Our science-backed method focuses on what truly works: eating right, staying active, and prioritizing rest and recovery. 
+      It’s a proven path to reaching your ideal weight and health outcomes—without relying on new medications.
+    </p>
+  </section>
+
+  <!-- 📦 Offer Breakdown -->
+  <section>
+    <h2>Which Blueprint Fits You Best?</h2>
+    <div class="offer-grid">
+      <div class="offer">
+        <h3>Beginner</h3>
+        <p>Perfect for those starting their wellness journey. Simple meals, easy workouts, and positive reinforcement.</p>
+      </div>
+      <div class="offer">
+        <h3>Intermediary</h3>
+        <p>For those ready to level up. Structured routines, performance tracking, and deeper nutritional guidance.</p>
+      </div>
+      <div class="offer">
+        <h3>Elite Plus+</h3>
+        <p>Advanced optimization for high performers. Biohacked strategies, recovery protocols, and elite-level results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💬 Testimonial Carousel -->
+  <section class="testimonial-carousel">
+    <h2>Real Results from Real People</h2>
+    <div class="carousel">
+      <div class="testimonial active">“I didn’t want a long, drawn-out course. I just needed to know what to eat and how to move. Body Blueprint delivered in less than 60 days—17 pounds gone.”<br><strong>— John C., Phoenix, AZ</strong></div>
+      <div class="testimonial">“GLP-1 meds scared me. I wanted results without side effects. Body Blueprint gave me that. I’m down 26 pounds and my doctor is stunned.”<br><strong>— Marcus T., Tampa, FL</strong></div>
+      <div class="testimonial">“Beginner was so clear and doable. I didn’t feel judged—I felt empowered. Down 14 pounds and my blood pressure normalized.”<br><strong>— Tanya S., Boise, ID</strong></div>
+      <div class="testimonial">“Elite Plus+ respected my time. I dropped 22 pounds and sleep better than I have in years.”<br><strong>— Andre M., Chicago, IL</strong></div>
+      <div class="testimonial">“I’m 62 and thought it was too late. Turns out, it wasn’t. I feel alive again.”<br><strong>— Barbara J., Santa Fe, NM</strong></div>
+    </div>
+  </section>
+
+  <!-- 🔁 Footer Section -->
+  <footer>
+    <div class="product-thumbnails">
+      <img src="images/beginner.png" alt="Beginner Guide" />
+      <img src="images/intermediary.png" alt="Intermediary Guide" />
+      <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
+    </div>
+    <strong>Body Blueprint®</strong>
+  </footer>
+
+  <!-- 🔄 Carousel Script -->
+  <script>
+    let index = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    setInterval(() => {
+      testimonials[index].classList.remove('active');
+      index = (index + 1) % testimonials.length;
+      testimonials[index].classList.add('active');
+    }, 5000);
+  </script>
+
+</body>
+</html>
+
