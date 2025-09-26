@@ -4,50 +4,53 @@
   <meta charset="UTF-8" />
   <title>Body Blueprint</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <header>
     <h1>Body Blueprint</h1>
-    <p>Precision Fitness & Nutrition Plans</p>
+    <p>Science-backed simplicity for lasting health.</p>
   </header>
 
-  <section id="quiz">
-    <form id="userForm">
-      <label>Gender:
-        <select name="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </label>
-      <label>Age: <input type="number" name="age" required /></label>
-      <label>Weight (kg): <input type="number" name="weight" required /></label>
-      <label>Height (cm): <input type="number" name="height" required /></label>
-      <label>Goal:
-        <select name="goal">
-          <option value="weight_loss">Weight Loss</option>
-          <option value="toning">Toning</option>
-          <option value="muscle_gain">Muscle Gain</option>
-        </select>
-      </label>
-      <label>Experience Level:
-        <select name="level">
-          <option value="beginner">Beginner</option>
-          <option value="intermediate">Intermediate</option>
-          <option value="elite">Elite (Plus+)</option>
-        </select>
-      </label>
-      <button type="submit">Continue</button>
-    </form>
+  <section id="about">
+    <h2>🔬 About Body Blueprint</h2>
+    <p>
+      We've removed all the fluff. No gimmicks, no guesswork—just the most effective, <strong>science-backed strategies</strong> for reaching and maintaining your ideal weight, building healthy muscle, controlling blood sugar levels, and achieving lasting wellness.
+    </p>
+    <p>
+      Our plans are built on <strong>proven methods</strong> from the latest nutritional and exercise science. Every recommendation is grounded in research—not trends. We’ve curated the <strong>most efficient foods</strong> for delivering optimal nutrition to your body, chosen specifically for their ability to fuel performance, recovery, and metabolic health.
+    </p>
+    <p>
+      Whether you're just starting out or pushing toward elite-level conditioning, Body Blueprint gives you the tools to succeed—<strong>quickly, simply, and sustainably</strong>.
+    </p>
   </section>
 
-  <section id="payment">
-    <h2>Select Your Plan</h2>
-    <a href="https://buy.stripe.com/test_abc123" target="_blank"><button>Beginner – $9.99</button></a>
-    <a href="https://buy.stripe.com/test_def456" target="_blank"><button>Intermediate – $19.99</button></a>
-    <a href="https://buy.stripe.com/test_ghi789" target="_blank"><button>Elite Plus+ – $29.99</button></a>
+  <section id="plans">
+    <h2>🎯 Choose Your Plan</h2>
+
+    <div class="plan beginner">
+      <h3>🟢 Beginner Plan – <strong>$4.99 USD</strong></h3>
+      <p>Simple meals, bodyweight workouts, and foundational supplements.</p>
+      <button onclick="selectPlan('beginner')">Buy Beginner Plan</button>
+    </div>
+
+    <div class="plan intermediary">
+      <h3>🔵 Intermediary Plan – <strong>$6.99 USD</strong></h3>
+      <p>Macro-aware meals, gym/home workouts, and expanded recovery tools.</p>
+      <button onclick="selectPlan('intermediary')">Buy Intermediary Plan</button>
+    </div>
+
+    <div class="plan elite">
+      <h3>🔴 Elite Plus+ Plan – <strong>$9.99 USD</strong></h3>
+      <p>Biohacked meals, elite training, and advanced supplementation.</p>
+      <button onclick="selectPlan('elite')">Buy Elite Plus+ Plan</button>
+    </div>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    function selectPlan(tier) {
+      localStorage.setItem("selectedTier", tier);
+      window.location.href = "success.html";
+    }
+  </script>
 </body>
 </html>
