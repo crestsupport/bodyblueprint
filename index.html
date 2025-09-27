@@ -118,7 +118,24 @@
     <h1>Transform Your Health Naturally</h1>
     <p>Choose your Body Blueprint®: Beginner, Intermediary, or Elite Plus+</p>
     <div class="product-thumbnails">
-      <!-- Product cards here -->
+      <div class="product">
+        <img src="images/beginner.png" alt="Beginner Guide" />
+        <div class="price">$4.99</div>
+        <div class="description">Perfect for those starting their wellness journey. Simple meals, easy workouts, and positive reinforcement.</div>
+        <a class="buy-button" href="#">Buy Beginner</a>
+      </div>
+      <div class="product">
+        <img src="images/intermediary.png" alt="Intermediary Guide" />
+        <div class="price">$6.99</div>
+        <div class="description">For those ready to level up. Structured routines, performance tracking, and deeper nutritional guidance.</div>
+        <a class="buy-button" href="#">Buy Intermediary</a>
+      </div>
+      <div class="product">
+        <img src="images/eliteplus.png" alt="Elite Plus+ Guide" />
+        <div class="price">$9.99</div>
+        <div class="description">Advanced optimization for high performers. Biohacked strategies, recovery protocols, and elite-level results.</div>
+        <a class="buy-button" href="#">Buy Elite Plus+</a>
+      </div>
     </div>
   </header>
 
@@ -133,7 +150,18 @@
   <section>
     <h2>Which Blueprint Fits You Best?</h2>
     <div class="offer-grid">
-      <!-- Offer cards here -->
+      <div class="offer">
+        <h3>Beginner</h3>
+        <p>Start strong with simple, actionable steps. Ideal for those new to fitness and nutrition.</p>
+      </div>
+      <div class="offer">
+        <h3>Intermediary</h3>
+        <p>Build momentum with structured plans and deeper nutritional insight. Great for those ready to level up.</p>
+      </div>
+      <div class="offer">
+        <h3>Elite Plus+</h3>
+        <p>Push boundaries with advanced strategies and recovery protocols. Designed for high performers and biohackers.</p>
+      </div>
     </div>
   </section>
 
@@ -161,26 +189,28 @@
 
   <!-- Carousel Script -->
   <script>
-    const testimonials = document.querySelectorAll('.testimonial');
-    let index = 0;
+    document.addEventListener("DOMContentLoaded", function () {
+      const testimonials = document.querySelectorAll('.testimonial');
+      let index = 0;
 
-    function showTestimonial(i) {
-      testimonials.forEach((t, idx) => {
-        t.classList.remove('active');
-        t.style.opacity = '0';
-        t.style.position = 'absolute';
-      });
-      testimonials[i].classList.add('active');
-      testimonials[i].style.opacity = '1';
-      testimonials[i].style.position = 'relative';
-    }
+      function showTestimonial(i) {
+        testimonials.forEach((t, idx) => {
+          t.classList.remove('active');
+          t.style.opacity = '0';
+          t.style.position = 'absolute';
+        });
+        testimonials[i].classList.add('active');
+        testimonials[i].style.opacity = '1';
+        testimonials[i].style.position = 'relative';
+      }
 
-    showTestimonial(index);
-
-    setInterval(() => {
-      index = (index + 1) % testimonials.length;
       showTestimonial(index);
-    }, 5000);
+
+      setInterval(() => {
+        index = (index + 1) % testimonials.length;
+        showTestimonial(index);
+      }, 5000);
+    });
   </script>
 </body>
 </html>
