@@ -175,7 +175,7 @@
   <!-- Hero Section -->
   <header class="video-hero">
     <video autoplay muted loop playsinline>
-      <source src="hero.mp4" type="video/mp4" />
+      <source src="body-blueprint-background.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
     <div class="hero-overlay">
@@ -240,14 +240,4 @@
       slides.forEach((slide, i) => {
         slide.classList.remove('active');
       });
-      slides[index].classList.add('active');
-    }
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 4000);
-  </script>
-
-</body>
-</html>
+      slides[index].classList
