@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Body Blueprint® is a science-backed wellness system for safe weight loss, improved mental clarity, and metabolic health." />
-  <meta name="keywords" content="Body Blueprint, science-backed weight loss, GLP-1 alternative, cognitive clarity, metabolic health, fitness plans" />
-  <meta name="author" content="Body Blueprint" />
-  <title>Body Blueprint® | Science-Backed Wellness Plans</title>
+  <title>Body Blueprint® | Transform Your Health</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html {
       font-family: 'Roboto', sans-serif;
-      line-height: 1.5;
-      scroll-behavior: smooth;
       background: #f9f9f9;
+      scroll-behavior: smooth;
     }
 
     h1, h2, h3 {
@@ -77,74 +73,6 @@
       transform: scale(1.05);
     }
 
-    .testimonials, .plans {
-      padding: 3rem 1rem;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .carousel {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .slide {
-      display: none;
-      font-size: 1.1rem;
-      padding: 1rem;
-    }
-
-    .slide.active {
-      display: block;
-    }
-
-    .plan-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .plan {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      max-width: 300px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      flex: 1 1 300px;
-    }
-
-    .plan h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .plan p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .plan .price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      color: #1a2b4c;
-    }
-
-    .plan a {
-      display: inline-block;
-      background: #1a2b4c;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .plan a:hover {
-      background: #2e4a7d;
-    }
-
     .site-footer {
       background: #1a2b4c;
       color: white;
@@ -166,7 +94,6 @@
     @media (max-width: 768px) {
       .hero-overlay h1 { font-size: 2rem; }
       .hero-overlay p { font-size: 1rem; }
-      .plan-grid { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -180,46 +107,11 @@
     </video>
     <div class="hero-overlay">
       <h1>Transform Your Health Naturally</h1>
-      <p>Body Blueprint® is a science-backed, evidence-based system designed to help you reach your ideal weight safely—without the risks of GLP-1 drugs.</p>
+      <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely—without the risks of GLP-1 drugs.</p>
       <p>Experience sharper focus, reduced brain fog, improved memory, balanced blood sugar, elevated energy, and better sleep.</p>
       <a class="buy-button" href="#">Buy Now</a>
     </div>
   </header>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="carousel">
-      <div class="slide active"><p>"Body Blueprint® changed my life. I feel stronger, healthier, and more confident!"</p><span>— Jordan M.</span></div>
-      <div class="slide"><p>"I went from beginner to elite in 6 weeks. The program is genius."</p><span>— Taylor R.</span></div>
-      <div class="slide"><p>"Finally something that works. Natural, effective, and sustainable."</p><span>— Casey L.</span></div>
-    </div>
-  </section>
-
-  <!-- Plans -->
-  <section class="plans">
-    <h2>Choose Your Body Blueprint®</h2>
-    <div class="plan-grid">
-      <div class="plan">
-        <h3>Beginner</h3>
-        <p>Simple meals, foundational fitness, and mindset support.</p>
-        <div class="price">$4.99</div>
-        <a href="https://buy.stripe.com/test-beginner-link">Select Plan</a>
-      </div>
-      <div class="plan">
-        <h3>Intermediary</h3>
-        <p>Metabolic optimization, progressive workouts, and cognitive clarity tools.</p>
-        <div class="price">$6.99</div>
-        <a href="https://buy.stripe.com/test-intermediary-link">Select Plan</a>
-      </div>
-      <div class="plan">
-        <h3>Elite Plus+</h3>
-        <p>Full-body conditioning, neuro-enhancement, and deep recovery strategies.</p>
-        <div class="price">$9.99</div>
-        <a href="https://buy.stripe.com/test-elite-link">Select Plan</a>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -230,24 +122,6 @@
       <a href="terms.html">Terms of Use</a>
     </nav>
   </footer>
-
-  <!-- Carousel Script -->
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-      });
-      slides[index].classList.add('active');
-    }
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 4000);
-  </script>
 
 </body>
 </html>
