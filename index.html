@@ -66,14 +66,9 @@
       background: #2e4a7d;
     }
 
-    .testimonials, .plans {
+    .testimonials, .plans, .legal {
       padding: 3rem 1rem;
       text-align: center;
-    }
-
-    .testimonials h2, .plans h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
     }
 
     .carousel {
@@ -156,6 +151,18 @@
       text-decoration: none;
     }
 
+    .legal h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal p, .legal ul {
+      max-width: 800px;
+      margin: 0 auto 1rem;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
     @media (max-width: 768px) {
       .hero-overlay h1 { font-size: 2rem; }
       .hero-overlay p { font-size: 1rem; }
@@ -214,33 +221,12 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
-    <nav>
-      <a href="disclaimer.html">Disclaimer</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Use</a>
-    </nav>
-  </footer>
+  <!-- Legal Sections -->
+  <section class="legal" id="disclaimer">
+    <h2>Disclaimer</h2>
+    <p>The content on Body Blueprint® is for informational purposes only. It is not intended to diagnose, treat, cure, or prevent any disease. Always consult a licensed healthcare provider before starting any fitness, nutrition, or supplement regimen. Results may vary. We may earn commissions from affiliate links. Testimonials reflect individual experiences and are not typical.</p>
+  </section>
 
-  <!-- Carousel Script -->
-  <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-      });
-      slides[index].classList.add('active');
-    }
-
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, 4000);
-  </script>
-
-</body>
-</html>
+  <section class="legal" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p>We collect personal identifiers, payment info (via Stripe), and usage data to improve your experience
