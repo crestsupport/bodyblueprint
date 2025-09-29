@@ -7,6 +7,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      font-family: 'Roboto', sans-serif;
+      background: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+
     .video-hero {
       position: relative;
       height: 100vh;
@@ -62,6 +73,74 @@
       background: #2e4a7d;
       transform: scale(1.05);
     }
+
+    #plans {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .plan-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .plan {
+      background: #f0f4f8;
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .plan h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1a2b4c;
+      margin-bottom: 1rem;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .plan ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .site-footer {
+      background: #1a2b4c;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .site-footer nav a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+
+    .site-footer nav a:hover {
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero-overlay h1 { font-size: 2rem; }
+      .hero-overlay p { font-size: 1rem; }
+      .plan-grid { flex-direction: column; align-items: center; }
+    }
   </style>
 </head>
 <body>
@@ -80,42 +159,39 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <section id="testimonials">
-      <h2>What People Are Saying</h2>
-      <div class="testimonial">
-        <p>"I lost 18 pounds in 6 weeks and feel sharper than ever!"</p>
-        <cite>— Sarah M.</cite>
-      </div>
-      <div class="testimonial">
-        <p>"My sleep improved and my energy is through the roof."</p>
-        <cite>— James L.</cite>
-      </div>
-    </section>
-
-    <section id="plans">
-      <h2>Choose Your Plan</h2>
+  <!-- Pricing Plans -->
+  <section id="plans">
+    <h2>Choose Your Plan</h2>
+    <div class="plan-grid">
       <div class="plan">
-        <h3>Starter</h3>
-        <p>$49/month</p>
+        <h3>Beginner</h3>
+        <p class="price">$4.99 USD / month</p>
         <ul>
-          <li>Weekly coaching</li>
-          <li>Meal plans</li>
-          <li>Progress tracking</li>
+          <li>Foundational guidance</li>
+          <li>Weekly check-ins</li>
+          <li>Basic meal templates</li>
         </ul>
       </div>
       <div class="plan">
-        <h3>Pro</h3>
-        <p>$89/month</p>
+        <h3>Intermediary</h3>
+        <p class="price">$6.99 USD / month</p>
         <ul>
-          <li>Everything in Starter</li>
-          <li>Personalized supplements</li>
-          <li>24/7 support</li>
+          <li>Personalized coaching</li>
+          <li>Advanced nutrition plans</li>
+          <li>Progress tracking dashboard</li>
         </ul>
       </div>
-    </section>
-  </main>
+      <div class="plan">
+        <h3>Elite Plus+</h3>
+        <p class="price">$9.99 USD / month</p>
+        <ul>
+          <li>All Intermediary features</li>
+          <li>Supplement recommendations</li>
+          <li>Priority support access</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -127,6 +203,5 @@
     </nav>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
