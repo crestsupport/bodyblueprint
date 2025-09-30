@@ -3,18 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Body Blueprint® | Transform Your Health</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <title>Body Blueprint®</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html {
-      font-family: 'Roboto', sans-serif;
-      background: #f9f9f9;
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+      background: black;
     }
 
     .video-hero {
@@ -23,18 +19,13 @@
       overflow: hidden;
     }
 
-    .video-wrapper {
+    .video-hero iframe {
       position: absolute;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
-    }
-
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
       border: none;
+      z-index: 0;
     }
 
     .hero-overlay {
@@ -42,23 +33,19 @@
       z-index: 1;
       color: white;
       text-align: center;
-      padding: 20vh 1rem 2rem;
-      background: rgba(0, 0, 0, 0.4);
+      padding: 20vh 1rem;
+      background: rgba(0, 0, 0, 0.5);
     }
 
     .hero-overlay h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      text-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
 
     .hero-overlay p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+      font-size: 1.2rem;
       max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 2rem;
     }
 
     .buy-button {
@@ -69,145 +56,23 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease;
-    }
-
-    .buy-button:hover {
-      background: #2e4a7d;
-      transform: scale(1.05);
-    }
-
-    #plans {
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    .plan-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .plan {
-      background: #f0f4f8;
-      border-radius: 8px;
-      padding: 1.5rem;
-      max-width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .plan h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #1a2b4c;
-      margin-bottom: 1rem;
-    }
-
-    .plan ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .plan ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    .site-footer {
-      background: #1a2b4c;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    .site-footer nav a {
-      color: #fff;
-      text-decoration: underline;
-      margin: 0 0.5rem;
-    }
-
-    .site-footer nav a:hover {
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .hero-overlay h1 { font-size: 2rem; }
-      .hero-overlay p { font-size: 1rem; }
-      .plan-grid { flex-direction: column; align-items: center; }
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <header class="video-hero">
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/JAdbby8iBG0?rel=0&autoplay=1&loop=1&playlist=JAdbby8iBG0"
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowfullscreen>
-      </iframe>
-    </div>
+  <div class="video-hero">
+    <iframe src="https://www.youtube.com/embed/JAdbby8iBG0?rel=0&autoplay=1&loop=1&playlist=JAdbby8iBG0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowfullscreen>
+    </iframe>
     <div class="hero-overlay">
       <h1>Transform Your Health Naturally</h1>
       <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely—without the risks of GLP-1 drugs.</p>
-      <p>Experience sharper focus, reduced brain fog, improved memory, balanced blood sugar, elevated energy, and better sleep.</p>
       <a class="buy-button" href="#">Buy Now</a>
     </div>
-  </header>
-
-  <!-- Pricing Plans -->
-  <section id="plans">
-    <h2>Choose Your Plan</h2>
-    <div class="plan-grid">
-      <div class="plan">
-        <h3>Beginner</h3>
-        <p class="price">$4.99 USD / month</p>
-        <ul>
-          <li>Foundational guidance</li>
-          <li>Weekly check-ins</li>
-          <li>Basic meal templates</li>
-        </ul>
-      </div>
-      <div class="plan">
-        <h3>Intermediary</h3>
-        <p class="price">$6.99 USD / month</p>
-        <ul>
-          <li>Personalized coaching</li>
-          <li>Advanced nutrition plans</li>
-          <li>Progress tracking dashboard</li>
-        </ul>
-      </div>
-      <div class="plan">
-        <h3>Elite Plus+</h3>
-        <p class="price">$9.99 USD / month</p>
-        <ul>
-          <li>All Intermediary features</li>
-          <li>Supplement recommendations</li>
-          <li>Priority support access</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
-    <nav>
-      <a href="disclaimer.html">Disclaimer</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Use</a>
-    </nav>
-  </footer>
-
+  </div>
 </body>
 </html>
+
+   
