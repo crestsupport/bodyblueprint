@@ -1,55 +1,16 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background: #f9f9f9;
-  color: #333;
+.video-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Video stays behind */
 }
 
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 0;
-}
-
-h2 {
-  margin-top: 40px;
-  color: #222;
-}
-
-.plan {
-  border: 2px solid #ccc;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-}
-
-.plan.beginner {
-  border-color: #4CAF50;
-}
-
-.plan.intermediary {
-  border-color: #2196F3;
-}
-
-.plan.elite {
-  border-color: #f44336;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  margin-top: 10px;
-  cursor: pointer;
-  background-color: #333;
+.hero-overlay {
+  position: relative;
+  z-index: 1; /* Content sits on top */
   color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #555;
+  text-align: center;
+  padding: 20vh 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
 }
