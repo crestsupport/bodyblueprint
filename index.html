@@ -54,8 +54,8 @@
     }
 
     .hero-overlay p {
-      font-size: 1.2rem;
-      max-width: 700px;
+      font-size: 1.1rem;
+      max-width: 800px;
       margin-bottom: 2rem;
     }
 
@@ -116,6 +116,34 @@
       line-height: 1.4;
     }
 
+    #testimonials {
+      background: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .carousel {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonial {
+      display: none;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .testimonial.active {
+      display: block;
+    }
+
+    .testimonial-author {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #1a2b4c;
+    }
+
     .site-footer {
       background: #1a2b4c;
       color: white;
@@ -151,7 +179,7 @@
     </iframe>
     <div class="hero-overlay">
       <h1>Transform Your Health Naturally</h1>
-      <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely—without the risks of GLP-1 drugs.</p>
+      <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely without the risks of GLP-1 drugs, achieve blood sugar control, lower hypertension, improve cognitive performance, improve energy and improve sleep.</p>
       <a class="buy-button" href="#">Buy Now</a>
     </div>
   </div>
@@ -178,6 +206,25 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Our Members Say</h2>
+    <div class="carousel">
+      <div class="testimonial active">
+        “Body Blueprint® helped me lose 20 pounds and sleep better than I have in years.”
+        <div class="testimonial-author">— Sarah M.</div>
+      </div>
+      <div class="testimonial">
+        “I feel sharper, more focused, and my blood sugar is finally stable.”
+        <div class="testimonial-author">— James T.</div>
+      </div>
+      <div class="testimonial">
+        “This system is a game-changer. No drugs, just results.”
+        <div class="testimonial-author">— Priya K.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
@@ -187,6 +234,17 @@
       <a href="terms.html">Terms of Use</a>
     </nav>
   </footer>
+
+  <!-- Carousel Script -->
+  <script>
+    let index = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    setInterval(() => {
+      testimonials[index].classList.remove('active');
+      index = (index + 1) % testimonials.length;
+      testimonials[index].classList.add('active');
+    }, 5000);
+  </script>
 
 </body>
 </html>
