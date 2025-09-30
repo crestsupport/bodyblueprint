@@ -95,9 +95,13 @@
       text-align: center;
     }
 
-    .plan h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    .plan h3 a {
+      color: #1a2b4c;
+      text-decoration: none;
+    }
+
+    .plan h3 a:hover {
+      text-decoration: underline;
     }
 
     .price {
@@ -107,58 +111,9 @@
       margin-bottom: 1rem;
     }
 
-    .plan ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .plan ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    #testimonials {
-      background: #fff;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    .carousel {
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .testimonial {
-      display: none;
-      font-style: italic;
-      font-size: 1.1rem;
-    }
-
-    .testimonial.active {
-      display: block;
-    }
-
-    .testimonial-author {
-      margin-top: 1rem;
-      font-weight: bold;
-      color: #1a2b4c;
-    }
-
-    #how-it-works {
-      background: #eef2f7;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-
-    #how-it-works h2 {
-      margin-bottom: 1rem;
-    }
-
-    #how-it-works p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
+    .plan p {
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
 
     .site-footer {
@@ -206,58 +161,21 @@
     <h2>Choose Your Plan</h2>
     <div class="plan-grid">
       <div class="plan">
-        <h3>Beginner</h3>
-        <p class="price">$4.99 USD / month</p>
-        <ul>
-          <li>Foundational guidance</li>
-          <li>Weekly check-ins</li>
-          <li>Basic meal templates</li>
-        </ul>
+        <h3><a href="images.html#beginner">Beginner</a></h3>
+        <p class="price">$4.99 USD (one-time)</p>
+        <p>A foundational Nutrition & Fitness Guide designed for those starting their health journey. Includes beginner-friendly meal templates, simple workouts, and lifestyle tips to build momentum.</p>
       </div>
       <div class="plan">
-        <h3>Intermediary</h3>
-        <p class="price">$6.99 USD / month</p>
-        <ul>
-          <li>Personalized coaching</li>
-          <li>Advanced nutrition plans</li>
-          <li>Progress tracking dashboard</li>
-        </ul>
+        <h3><a href="images.html#intermediary">Intermediary</a></h3>
+        <p class="price">$6.99 USD (one-time)</p>
+        <p>An intermediate-level Nutrition & Fitness Guide offering personalized coaching, advanced meal planning, and progress tracking tools to help break through plateaus and build consistency.</p>
       </div>
       <div class="plan">
-        <h3>Elite Plus+</h3>
-        <p class="price">$9.99 USD / month</p>
-        <ul>
-          <li>All Intermediary features</li>
-          <li>Supplement recommendations</li>
-          <li>Priority support access</li>
-        </ul>
+        <h3><a href="images.html#eliteplus">Elite Plus+</a></h3>
+        <p class="price">$9.99 USD (one-time)</p>
+        <p>Our most comprehensive Nutrition & Fitness Guide. Includes everything from Beginner and Intermediary tiers, plus supplement recommendations, elite-level training plans, and priority support access.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <h2>What Our Members Say</h2>
-    <div class="carousel">
-      <div class="testimonial active">
-        “Body Blueprint® helped me lose 20 pounds and sleep better than I have in years.”
-        <div class="testimonial-author">— Sarah M.</div>
-      </div>
-      <div class="testimonial">
-        “I feel sharper, more focused, and my blood sugar is finally stable.”
-        <div class="testimonial-author">— James T.</div>
-      </div>
-      <div class="testimonial">
-        “This system is a game-changer. No drugs, just results.”
-        <div class="testimonial-author">— Priya K.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section id="how-it-works">
-    <h2>How It Works</h2>
-    <p>Body Blueprint® combines nutritional science, behavioral coaching, and personalized tracking to help you reach your goals naturally. No prescriptions. No side effects. Just a smarter way to transform your health.</p>
   </section>
 
   <!-- Footer -->
@@ -270,9 +188,5 @@
     </nav>
   </footer>
 
-  <!-- Carousel Script -->
-  <script>
-    let index = 0;
-    const testimonials = document.querySelectorAll('.testimonial');
-    setInterval(() => {
-      testimonials[index].classList.remove('active');
+</body>
+</html>
