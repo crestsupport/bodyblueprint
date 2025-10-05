@@ -73,6 +73,14 @@
       background: #2e4a7d;
     }
 
+    .payment-buttons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
     #plans {
       padding: 3rem 1rem;
       text-align: center;
@@ -168,6 +176,15 @@
       .plan-grid { flex-direction: column; align-items: center; }
     }
 
+    @media (max-width: 480px) {
+      .logo-letterhead {
+        top: 10px;
+        right: 10px;
+        max-width: 70px;
+        opacity: 0.8;
+      }
+    }
+
     .logo-letterhead {
       position: fixed;
       top: 20px;
@@ -205,45 +222,25 @@
         <h3><a href="images.html#beginner">Body Blueprint® Beginner Nutrition & Fitness Guide</a></h3>
         <p class="price">Was <s>$7.99</s> → <strong>$4.99 USD</strong> (limited time)</p>
         <p>A foundational Nutrition & Fitness Guide designed for those starting their health journey. Includes beginner-friendly meal templates, simple workouts, and lifestyle tips to build momentum.</p>
+        <div class="payment-buttons">
+          <a href="https://buy.stripe.com/14AfYZ1y2a2a1T2fWva7C09" class="buy-button">Buy with Stripe</a>
+          <a href="https://www.paypal.com/ncp/payment/67VASCP8N6KX2" class="buy-button">Buy with PayPal</a>
+        </div>
       </div>
       <div class="plan">
         <h3><a href="images.html#intermediary">Body Blueprint® Intermediary Nutrition & Fitness Guide</a></h3>
         <p class="price">Was <s>$10.99</s> → <strong>$6.99 USD</strong> (limited time)</p>
         <p>An intermediate-level Nutrition & Fitness Guide offering personalized coaching, advanced meal planning, and progress tracking tools to help break through plateaus and build consistency.</p>
+        <div class="payment-buttons">
+          <a href="https://buy.stripe.com/6oU6opekOdemapy11Ba7C0a" class="buy-button">Buy with Stripe</a>
+          <a href="https://www.paypal.com/ncp/payment/RCHQCB72CNCDE" class="buy-button">Buy with PayPal</a>
+        </div>
       </div>
       <div class="plan">
         <h3><a href="images.html#eliteplus">Body Blueprint® Elite Plus+ Nutrition & Fitness Guide</a></h3>
         <p class="price">Was <s>$16.99</s> → <strong>$9.99 USD</strong></p>
         <p>Our most comprehensive Nutrition & Fitness Guide. Includes everything from Beginner and Intermediary tiers, plus supplement recommendations, elite-level training plans, and the latest cutting science-backed biohacking tips for reaching and maintaining your ideal weight, elevating your physical and mental well-being.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <h2>What Our Members Say</h2>
-    <div class="carousel">
-      <div class="testimonial active">
-        “Body Blueprint® helped me lose 20 pounds and sleep better than I have in years.”
-        <div class="testimonial-author">— Sarah M.</div>
-      </div>
-      <div class="testimonial">
-        “I feel sharper, more focused, and my blood sugar is finally stable.”
-        <div class="testimonial-author">— James T.</div>
-      </div>
-      <div class="testimonial">
-        “This system is a game-changer. No drugs, just results.”
-        <div class="testimonial-author">— Priya K.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
-    <nav>
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Use</a> |
-      <a href="disclaimer.html">Disclaimer</a>
-    </nav>
-  </footer>
+        <div class="payment-buttons">
+          <a href="https://buy.stripe.com/7sYeUV2C6gqy2X68u3a7C0b" class="buy-button">Buy with Stripe</a>
+          <a href="https://www.paypal.com/ncp/payment/BKKFHMTBS5B4J" class="buy-button">Buy with PayPal</a
+                                                                                                         
