@@ -59,6 +59,20 @@
       margin-bottom: 2rem;
     }
 
+    .buy-button {
+      background: #1a2b4c;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .buy-button:hover {
+      background: #2e4a7d;
+    }
+
     #plans {
       padding: 3rem 1rem;
       text-align: center;
@@ -94,12 +108,6 @@
       font-size: 1.2rem;
       font-weight: bold;
       color: #1a2b4c;
-      margin-bottom: 0.5rem;
-    }
-
-    .limited-offer {
-      font-size: 0.95rem;
-      color: #d12f2f;
       margin-bottom: 1rem;
     }
 
@@ -159,9 +167,23 @@
       .hero-overlay p { font-size: 1rem; }
       .plan-grid { flex-direction: column; align-items: center; }
     }
+
+    .logo-letterhead {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      max-width: 100px;
+      height: auto;
+      z-index: 1000;
+      opacity: 0.9;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Floating Logo -->
+  <img src="images/logo.png" alt="Body Blueprint® Logo" class="logo-letterhead" />
 
   <!-- Hero Section -->
   <div class="video-hero">
@@ -172,7 +194,6 @@
     <div class="hero-overlay">
       <h1>Transform Your Health Naturally</h1>
       <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely without the risks of GLP-1 drugs, achieve blood sugar control, lower hypertension, improve cognitive performance, improve energy and improve sleep.</p>
-      <!-- Buy Now button removed -->
     </div>
   </div>
 
@@ -182,24 +203,18 @@
     <div class="plan-grid">
       <div class="plan">
         <h3><a href="images.html#beginner">Body Blueprint® Beginner Nutrition & Fitness Guide</a></h3>
-        <p class="price">Was $7.99 → $4.99 USD</p>
-        <p class="limited-offer">Limited Time Offer</p>
+        <p class="price">Was <s>$7.99</s> → <strong>$4.99 USD</strong> (limited time)</p>
         <p>A foundational Nutrition & Fitness Guide designed for those starting their health journey. Includes beginner-friendly meal templates, simple workouts, and lifestyle tips to build momentum.</p>
-        <!-- Stripe & PayPal buttons go here -->
       </div>
       <div class="plan">
         <h3><a href="images.html#intermediary">Body Blueprint® Intermediary Nutrition & Fitness Guide</a></h3>
-        <p class="price">Was $10.99 → $6.99 USD</p>
-        <p class="limited-offer">Limited Time Offer</p>
+        <p class="price">Was <s>$10.99</s> → <strong>$6.99 USD</strong> (limited time)</p>
         <p>An intermediate-level Nutrition & Fitness Guide offering personalized coaching, advanced meal planning, and progress tracking tools to help break through plateaus and build consistency.</p>
-        <!-- Stripe & PayPal buttons go here -->
       </div>
       <div class="plan">
         <h3><a href="images.html#eliteplus">Body Blueprint® Elite Plus+ Nutrition & Fitness Guide</a></h3>
-        <p class="price">Was $16.99 → $9.99 USD</p>
-        <p class="limited-offer">Limited Time Offer</p>
+        <p class="price">Was <s>$16.99</s> → <strong>$9.99 USD</strong></p>
         <p>Our most comprehensive Nutrition & Fitness Guide. Includes everything from Beginner and Intermediary tiers, plus supplement recommendations, elite-level training plans, and the latest cutting science-backed biohacking tips for reaching and maintaining your ideal weight, elevating your physical and mental well-being.</p>
-        <!-- Stripe & PayPal buttons go here -->
       </div>
     </div>
   </section>
@@ -226,23 +241,3 @@
   <!-- Footer -->
   <footer class="site-footer">
     <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
-    <nav>
-      <a href="disclaimer.html">Disclaimer</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="terms.html">Terms of Use</a>
-    </nav>
-  </footer>
-
-  <!-- Carousel Script -->
-  <script>
-    let index = 0;
-    const testimonials = document.querySelectorAll('.testimonial');
-    setInterval(() => {
-      testimonials[index].classList.remove('active');
-      index = (index + 1) % testimonials.length;
-      testimonials[index].classList.add('active');
-    }, 5000);
-  </script>
-
-</body>
-</html>
