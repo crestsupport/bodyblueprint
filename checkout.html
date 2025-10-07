@@ -1,0 +1,36 @@
+<section style="max-width: 600px; margin: 0 auto; padding: 2rem; font-family: Arial, sans-serif;">
+  <h2>Body Blueprint® Intermediary Guide</h2>
+  <p>90 recipes, strategic dashboards, and premium recovery systems. Science-backed. Empowering. Ready to transform.</p>
+  <p><strong>Price:</strong> $49 CAD</p>
+
+  <!-- Stripe Checkout Button -->
+  <form action="/create-checkout-session" method="POST">
+    <button type="submit" style="background-color:#635bff;color:white;padding:12px 24px;border:none;border-radius:4px;font-size:16px;cursor:pointer;">
+      Buy with Stripe
+    </button>
+  </form>
+
+  <!-- PayPal Smart Button -->
+  <div id="paypal-button-container" style="margin-top: 2rem;"></div>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=CAD"></script>
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '49.00'
+            },
+            description: 'Body Blueprint® Intermediary Guide'
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Thank you, ' + details.payer.name.given_name + '! Your guide is ready to download.');
+          window.location.href = "/downloads/intermediary-guide";
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+</section>
