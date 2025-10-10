@@ -1,8 +1,140 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Body Blueprint</title></head>
-  <body>
-    <h1>Welcome to Body Blueprint</h1>
-    <p>This is a placeholder index file to enable GitHub Pages.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Blueprint® — Wellness Made Actionable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      color: #666;
+    }
+    .video iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 400px;
+      border: none;
+      margin: 2rem auto;
+      display: block;
+    }
+    .pricing {
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .tier {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .tier h3 {
+      margin-top: 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 0.5rem 0.5rem 0 0;
+      padding: 0.75rem 1.5rem;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .access {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .access input {
+      padding: 0.5rem;
+      width: 70%;
+      margin-right: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .access button {
+      padding: 0.5rem 1rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    footer nav a {
+      margin: 0 0.5rem;
+      color: #0077cc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Body Blueprint®</h1>
+    <p class="tagline">Science-backed wellness. Actionable simplicity. Real results.</p>
+  </header>
+
+  <main>
+    <section class="video">
+      <h2>Watch the Transformation</h2>
+      <iframe src="https://www.youtube.com/embed/0DiBfHntLQ8" allowfullscreen></iframe>
+    </section>
+
+    <section class="pricing">
+      <h2>Choose Your Blueprint</h2>
+
+      <div class="tier">
+        <h3>Body Blueprint® Beginner</h3>
+        <p>$29 – Foundational habits, nutrition, and mindset</p>
+        <a href="https://buy.stripe.com/00g4iUeZJ2gB7gY4gg" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
+        <a href="https://www.paypal.com/checkoutnow?token=7FJ87935EJ4201234" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
+      </div>
+
+      <div class="tier">
+        <h3>Body Blueprint® Intermediary</h3>
+        <p>$49 – Progressive training, recovery, and performance</p>
+        <a href="https://buy.stripe.com/4gw4iUeZJ2gB7gY4hh" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
+        <a href="https://www.paypal.com/checkoutnow?token=9KJ87935EJ4205678" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
+      </div>
+
+      <div class="tier">
+        <h3>Body Blueprint® Elite Plus+</h3>
+        <p>$79 – Advanced protocols, optimization, and mastery</p>
+        <a href="https://buy.stripe.com/8gw4iUeZJ2gB7gY4jj" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
+        <a href="https://www.paypal.com/checkoutnow?token=2HJ87935EJ4209999" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
+      </div>
+    </section>
+
+    <section class="access">
+      <h2>Already Purchased?</h2>
+      <p>Enter your secure token to access your guide:</p>
+      <form action="https://tight-art-0743.ctohm.workers.dev" method="GET">
+        <input type="text" name="token" placeholder="Enter your token" required />
+        <button type="submit">Access My Guide</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
+    <nav>
+      <a href="privacy.html">Privacy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </footer>
+</body>
 </html>
+
