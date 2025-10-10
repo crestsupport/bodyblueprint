@@ -13,27 +13,80 @@
       overflow-x: hidden;
       color: #333;
     }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-top: 30vh;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .hero-content {
+        padding-top: 20vh;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
     main {
       padding: 2rem;
       max-width: 800px;
       margin: 0 auto;
     }
+
     .pricing, .access {
       background: white;
       padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       margin-bottom: 2rem;
+      text-align: center;
     }
+
     .tier {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .tier h3 {
-      margin-top: 0;
+
+    .tier p {
+      margin-bottom: 1rem;
     }
+
     .btn {
       display: inline-block;
-      margin: 0.5rem 0.5rem 0 0;
+      margin: 0.25rem;
+      min-width: 140px;
       padding: 0.75rem 1.5rem;
       background-color: #0077cc;
       color: white;
@@ -42,9 +95,11 @@
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
+
     .btn:hover {
       background-color: #005fa3;
     }
+
     .access input {
       padding: 0.5rem;
       width: 70%;
@@ -52,6 +107,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     .access button {
       padding: 0.5rem 1rem;
       background-color: #28a745;
@@ -59,11 +115,13 @@
       border: none;
       border-radius: 5px;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
     }
+
     footer nav a {
       margin: 0 0.5rem;
       color: #0077cc;
@@ -72,11 +130,11 @@
   </style>
 </head>
 <body>
-  <section class="hero" style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
-    <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+  <section class="hero">
+    <video autoplay muted loop playsinline>
       <source src="https://crestsupport.github.io/bodyblueprint-media/video.mp4" type="video/mp4" />
     </video>
-    <div style="position: relative; z-index: 1; text-align: center; padding-top: 30vh; color: white; text-shadow: 0 0 10px rgba(0,0,0,0.7); padding-left: 1rem; padding-right: 1rem;">
+    <div class="hero-content">
       <h1>Transform Your Health Naturally</h1>
       <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely without the risks of GLP-1 drugs, achieve blood sugar control, lower hypertension, improve cognitive performance, improve energy and improve sleep.</p>
     </div>
@@ -95,14 +153,14 @@
 
       <div class="tier">
         <h3>Body Blueprint® Intermediary</h3>
-        <p>$6.99 – Progressive training, recovery, and performance</p>
+        <p>$6.99 – Fitness, recovery, and performance</p>
         <a href="https://buy.stripe.com/eVq9AB7Wq8Y641a8u3a7C0d" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
         <a href="https://www.paypal.com/ncp/payment/RCHQCB72CNCDE" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
       </div>
 
       <div class="tier">
         <h3>Body Blueprint® Elite Plus+</h3>
-        <p>$9.99 – Advanced protocols, optimization, and mastery</p>
+        <p>$9.99 – Mindset, optimization, and mastery</p>
         <a href="https://buy.stripe.com/28E6opgsWeiq41aeSra7C0e" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
         <a href="https://www.paypal.com/ncp/payment/BKKFHMTBS5B4J" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
       </div>
@@ -110,21 +168,4 @@
 
     <section class="access">
       <h2>Already Purchased?</h2>
-      <p>Enter your secure token to access your guide:</p>
-      <form action="https://tight-art-0743.ctohm.workers.dev" method="GET">
-        <input type="text" name="token" placeholder="Enter your token" required />
-        <button type="submit">Access My Guide</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
-    <nav>
-      <a href="privacy.html">Privacy</a> |
-      <a href="terms.html">Terms</a> |
-      <a href="disclaimer.html">Disclaimer</a>
-    </nav>
-  </footer>
-</body>
-</html>
+      <p>Enter your secure token to access your guide
