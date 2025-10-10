@@ -14,6 +14,35 @@
       background-color: #f9f9f9;
       color: #333;
     }
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero-video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-top: 30vh;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
     main {
       padding: 2rem;
       max-width: 800px;
@@ -70,38 +99,18 @@
       color: #0077cc;
       text-decoration: none;
     }
-
-    /* ✅ Background video styles */
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-      pointer-events: none;
-    }
-    .hero-overlay {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding-top: 30vh;
-      color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
   </style>
 </head>
 <body>
   <section class="hero">
-    <video autoplay muted loop playsinline id="bg-video">
-      <source src="https://crestsupport.github.io/bodyblueprint-media/video.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay">
-      <h1>Transform Your Health Naturally</h1>
-      <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely without the risks of GLP-1 drugs, achieve blood sugar control, lower hypertension, improve cognitive performance, improve energy and improve sleep.</p>
+    <div class="hero-video-wrapper">
+      <video autoplay muted loop playsinline>
+        <source src="https://crestsupport.github.io/bodyblueprint-media/video.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-content">
+        <h1>Transform Your Health Naturally</h1>
+        <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely without the risks of GLP-1 drugs, achieve blood sugar control, lower hypertension, improve cognitive performance, improve energy and improve sleep.</p>
+      </div>
     </div>
   </section>
 
