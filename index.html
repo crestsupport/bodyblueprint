@@ -5,39 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Body Blueprint® — Wellness Made Actionable</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+    body, html {
       margin: 0;
-      padding: 2rem;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #f9f9f9;
       color: #333;
     }
-    header, footer {
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
-      margin-bottom: 2rem;
+      padding-top: 30vh;
+      color: white;
+      text-shadow: 0 0 10px rgba(0,0,0,0.7);
     }
-    .tagline {
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
       font-size: 1.2rem;
-      color: #666;
     }
-    .video iframe {
-      width: 100%;
+    main {
+      padding: 2rem;
       max-width: 800px;
-      height: 400px;
-      border: none;
-      margin: 2rem auto;
-      display: block;
+      margin: 0 auto;
     }
-    .pricing {
-      max-width: 800px;
-      margin: 2rem auto;
-    }
-    .tier {
+    .pricing, .access {
       background: white;
       padding: 1.5rem;
       border-radius: 10px;
-      margin-bottom: 1.5rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    .tier {
+      margin-bottom: 1.5rem;
     }
     .tier h3 {
       margin-top: 0;
@@ -50,14 +72,11 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
-    .access {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    .btn:hover {
+      background-color: #005fa3;
     }
     .access input {
       padding: 0.5rem;
@@ -73,6 +92,11 @@
       border: none;
       border-radius: 5px;
     }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
     footer nav a {
       margin: 0 0.5rem;
       color: #0077cc;
@@ -81,17 +105,18 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Body Blueprint®</h1>
-    <p class="tagline">Science-backed wellness. Actionable simplicity. Real results.</p>
-  </header>
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Body Blueprint®</h1>
+      <p>Your science-backed path to lasting wellness. Simple. Actionable. Empowering.</p>
+    </div>
+  </section>
 
   <main>
-    <section class="video">
-      <h2>Watch the Transformation</h2>
-      <iframe src="https://www.youtube.com/embed/0DiBfHntLQ8" allowfullscreen></iframe>
-    </section>
-
     <section class="pricing">
       <h2>Choose Your Blueprint</h2>
 
@@ -137,4 +162,5 @@
   </footer>
 </body>
 </html>
+
 
