@@ -14,40 +14,11 @@
       background-color: #f9f9f9;
       color: #333;
     }
-
-    .hero {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding-top: 30vh;
-      color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
     main {
       padding: 2rem;
       max-width: 800px;
       margin: 0 auto;
     }
-
     .pricing, .access {
       background: white;
       padding: 1.5rem;
@@ -55,15 +26,12 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       margin-bottom: 2rem;
     }
-
     .tier {
       margin-bottom: 1.5rem;
     }
-
     .tier h3 {
       margin-top: 0;
     }
-
     .btn {
       display: inline-block;
       margin: 0.5rem 0.5rem 0 0;
@@ -75,11 +43,9 @@
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
-
     .btn:hover {
       background-color: #005fa3;
     }
-
     .access input {
       padding: 0.5rem;
       width: 70%;
@@ -87,7 +53,6 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-
     .access button {
       padding: 0.5rem 1rem;
       background-color: #28a745;
@@ -95,13 +60,11 @@
       border: none;
       border-radius: 5px;
     }
-
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
     }
-
     footer nav a {
       margin: 0 0.5rem;
       color: #0077cc;
@@ -110,11 +73,11 @@
   </style>
 </head>
 <body>
-  <section class="hero">
-    <video autoplay muted loop playsinline>
+  <section class="hero" style="position: relative; height: 100vh; overflow: hidden;">
+    <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
       <source src="https://crestsupport.github.io/bodyblueprint-media/video.mp4" type="video/mp4" />
     </video>
-    <div class="hero-content">
+    <div style="position: relative; z-index: 1; text-align: center; padding-top: 30vh; color: white; text-shadow: 0 0 10px rgba(0,0,0,0.7); padding-left: 1rem; padding-right: 1rem;">
       <h1>Transform Your Health Naturally</h1>
       <p>Body Blueprint® is a science-backed system designed to help you reach your ideal weight safely without the risks of GLP-1 drugs, achieve blood sugar control, lower hypertension, improve cognitive performance, improve energy and improve sleep.</p>
     </div>
