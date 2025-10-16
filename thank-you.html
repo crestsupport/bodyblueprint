@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You – Body Blueprint</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    button { padding: 0.6rem 1.2rem; font-size: 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Thanks for your purchase!</h1>
+  <p>Your guide is ready. Click below to begin:</p>
+  <button onclick="goToGuide()">Access Your Guide</button>
+
+  <script>
+    const url = new URL(window.location.href);
+    const tier = url.searchParams.get("tier");
+    const token = url.searchParams.get("token");
+
+    const guideMap = {
+      beginner: "https://crestsupport.github.io/bodyblueprint/beginner",
+      intermediary: "https://crestsupport.github.io/bodyblueprint/intermediary",
+      advanced: "https://crestsupport.github.io/bodyblueprint/elite-plus"
+    };
+
+    function goToGuide() {
+      const guideURL = guideMap[tier];
+      if (guideURL) {
+        window.location.href = `${guideURL}?token=${token}`;
+      } else {
+        alert("Invalid tier. Please contact support.");
+      }
+    }
+  </script>
+</body>
+</html>
