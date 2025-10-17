@@ -29,11 +29,15 @@
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s ease;
-      pointer-events: auto;
-      opacity: 1;
     }
     .button:hover {
       background: #0059c1;
+    }
+    #fallback {
+      display: none;
+      color: #b00020;
+      font-size: 0.95rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -42,23 +46,24 @@
   <h1>Thanks for your purchase!</h1>
   <p>Your guide is ready. Click below to begin:</p>
 
-  <!-- 🔹 Button is now always active -->
+  <!-- 🔹 Button is always visible -->
   <a class="button" id="access-button" href="#">Access Your Guide</a>
 
-  <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
-    If the button doesn’t work, please contact support with your order email.
-  </p>
+  <p id="fallback">We couldn’t find your access token. Please contact support with your order email.</p>
 
-  <!-- 🔹 Script injects token + tier into the button -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const tier = params.get("tier");
       const token = params.get("token");
+      const button = document.getElementById("access-button");
+      const fallback = document.getElementById("fallback");
 
       if (tier && token) {
-        const button = document.getElementById("access-button");
         button.href = `https://bb-webhook-handler.dbelnavis.workers.dev?tier=${tier}&token=${token}`;
+      } else {
+        button.style.display = "none";
+        fallback.style.display = "block";
       }
     });
   </script>
