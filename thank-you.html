@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Thank You – Body Blueprint</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You – Body Blueprint®</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 2rem; }
-    button { padding: 0.6rem 1.2rem; font-size: 1rem; cursor: pointer; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .button {
+      display: inline-block;
+      background: #0070f3;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background: #0059c1;
+    }
   </style>
 </head>
 <body>
+
   <h1>Thanks for your purchase!</h1>
   <p>Your guide is ready. Click below to begin:</p>
-  <button onclick="goToGuide()">Access Your Guide</button>
 
-  <script>
-    const url = new URL(window.location.href);
-    const tier = url.searchParams.get("tier");
-    const token = url.searchParams.get("token");
+  <a class="button" href="https://bb-webhook-handler.dbelnavis.workers.dev?tier=intermediary&token=intermediary-ABC123XYZ">
+    Access Your Guide
+  </a>
 
-    const guideMap = {
-      beginner: "https://crestsupport.github.io/bodyblueprint/beginner",
-      intermediary: "https://crestsupport.github.io/bodyblueprint/intermediary",
-      advanced: "https://crestsupport.github.io/bodyblueprint/elite-plus"
-    };
+  <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+    If the button doesn’t work, please contact support with your order email.
+  </p>
 
-    function goToGuide() {
-      const guideURL = guideMap[tier];
-      if (guideURL) {
-        window.location.href = `${guideURL}?token=${token}`;
-      } else {
-        alert("Invalid tier. Please contact support.");
-      }
-    }
-  </script>
 </body>
 </html>
+
