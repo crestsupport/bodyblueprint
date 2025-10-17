@@ -20,18 +20,10 @@
       font-size: 1.1rem;
       margin-bottom: 2rem;
     }
-    .button {
-      display: inline-block;
-      background: #0070f3;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-    .button:hover {
-      background: #0059c1;
+    .note {
+      font-size: 0.95rem;
+      color: #666;
+      margin-top: 2rem;
     }
     #fallback {
       display: none;
@@ -44,11 +36,9 @@
 <body>
 
   <h1>Thanks for your purchase!</h1>
-  <p>Your guide is ready. Click below to begin:</p>
+  <p>Your guide is ready. You’ll be redirected shortly…</p>
 
-  <!-- 🔹 Button is always visible -->
-  <a class="button" id="access-button" href="#">Access Your Guide</a>
-
+  <p class="note">If nothing happens after a few seconds, please contact support with your order email.</p>
   <p id="fallback">We couldn’t find your access token. Please contact support with your order email.</p>
 
   <script>
@@ -56,13 +46,13 @@
       const params = new URLSearchParams(window.location.search);
       const tier = params.get("tier");
       const token = params.get("token");
-      const button = document.getElementById("access-button");
       const fallback = document.getElementById("fallback");
 
       if (tier && token) {
-        button.href = `https://bb-webhook-handler.dbelnavis.workers.dev?tier=${tier}&token=${token}`;
+        setTimeout(() => {
+          window.location.href = `https://bb-webhook-handler.dbelnavis.workers.dev?tier=${tier}&token=${token}`;
+        }, 3000); // 3-second delay
       } else {
-        button.style.display = "none";
         fallback.style.display = "block";
       }
     });
