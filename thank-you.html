@@ -40,14 +40,24 @@
   <h1>Thanks for your purchase!</h1>
   <p>Your guide is ready. Click below to begin:</p>
 
-  <a class="button" href="https://bb-webhook-handler.dbelnavis.workers.dev?tier=intermediary&token=bb-intermediary-67890">
-    Access Your Guide
-  </a>
+  <a class="button" id="access-button" href="#">Access Your Guide</a>
 
   <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
     If the button doesn’t work, please contact support with your order email.
   </p>
 
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const tier = params.get("tier");
+    const token = params.get("token");
+
+    if (tier && token) {
+      const button = document.getElementById("access-button");
+      button.href = `https://bb-webhook-handler.dbelnavis.workers.dev?tier=${tier}&token=${token}`;
+    }
+  </script>
+
 </body>
 </html>
+
 
