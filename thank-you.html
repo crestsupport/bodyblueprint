@@ -46,16 +46,23 @@
     If the button doesn’t work, please contact support with your order email.
   </p>
 
-  <script>
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const tier = params.get("tier");
     const token = params.get("token");
 
     if (tier && token) {
       const button = document.getElementById("access-button");
-      button.href = `https://bb-webhook-handler.dbelnavis.workers.dev?tier=${tier}&token=${token}`;
+      if (button) {
+        button.href = `https://bb-webhook-handler.dbelnavis.workers.dev?tier=${tier}&token=${token}`;
+        button.style.pointerEvents = "auto";
+        button.style.opacity = "1";
+      }
     }
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
