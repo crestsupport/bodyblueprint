@@ -29,10 +29,6 @@
       border-radius: 6px;
       text-decoration: none;
       transition: background 0.3s ease;
-      pointer-events: none;
-      opacity: 0.5;
-    }
-    .button.active {
       pointer-events: auto;
       opacity: 1;
     }
@@ -46,7 +42,7 @@
   <h1>Thanks for your purchase!</h1>
   <p>Your guide is ready. Click below to begin:</p>
 
-  <!-- 🔹 Button starts disabled -->
+  <!-- 🔹 Button is now always active -->
   <a class="button" id="access-button" href="#">Access Your Guide</a>
 
   <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
@@ -63,7 +59,6 @@
       if (tier && token) {
         const button = document.getElementById("access-button");
         button.href = `https://bb-webhook-handler.dbelnavis.workers.dev?tier=${tier}&token=${token}`;
-        button.classList.add("active");
       }
     });
   </script>
