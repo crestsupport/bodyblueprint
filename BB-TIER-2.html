@@ -1062,38 +1062,39 @@
     <p>You’ve built something real. Keep going. Stay consistent. Stay curious. Stay empowered. Body Blueprint® is your foundation—and your future.</p>
   </div>
 
-      <script>
-  (function () {
-    const TOKEN_PREFIX = "TOKEN-BB-TIER-2-";
-    const EXPIRY_MINUTES = 10;
-    const HOMEPAGE_URL = "https://crestsupport.github.io/bodyblueprint/";
+     <script>
+(function () {
+  const TOKEN_PREFIX = "TOKEN-BB-TIER-2-";
+  const EXPIRY_MINUTES = 10;
+  const HOMEPAGE_URL = "https://crestsupport.github.io/bodyblueprint/";
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get("token");
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get("token");
 
-    if (!token || !token.startsWith(TOKEN_PREFIX)) {
-      window.location.href = HOMEPAGE_URL;
-      return;
-    }
+  if (!token || !token.startsWith(TOKEN_PREFIX)) {
+    window.location.href = HOMEPAGE_URL;
+    return;
+  }
 
-    const timestampStr = token.replace(TOKEN_PREFIX, "");
-    const timestamp = parseInt(timestampStr, 10);
-    const now = Date.now();
-    const ageMinutes = (now - timestamp) / 1000 / 60;
+  const timestampStr = token.replace(TOKEN_PREFIX, "");
+  const timestamp = parseInt(timestampStr, 10);
+  const now = Date.now();
+  const ageMinutes = (now - timestamp) / 1000 / 60;
 
-    if (isNaN(timestamp) || ageMinutes > EXPIRY_MINUTES) {
-      window.location.href = HOMEPAGE_URL;
-      return;
-    }
+  if (isNaN(timestamp) || ageMinutes > EXPIRY_MINUTES) {
+    window.location.href = HOMEPAGE_URL;
+    return;
+  }
 
-    if (sessionStorage.getItem(token)) {
-      window.location.href = HOMEPAGE_URL;
-      return;
-    } else {
-      sessionStorage.setItem(token, "used");
-    }
-  })();
-  </script>
+  if (sessionStorage.getItem(token)) {
+    window.location.href = HOMEPAGE_URL;
+    return;
+  } else {
+    sessionStorage.setItem(token, "used");
+  }
+})();
+</script>
+
 
 </body>
 </html>
