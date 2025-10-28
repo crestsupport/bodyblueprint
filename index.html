@@ -53,6 +53,14 @@
       margin: 0 auto;
     }
 
+    @media (max-width: 600px) {
+      .hero-content {
+        padding-top: 20vh;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
     .carousel-section {
       margin: 2rem auto;
       max-width: 900px;
@@ -204,16 +212,9 @@
       </div>
     </div>
   </section>
-    <section class="access">
-      <h2>Already Purchased?</h2>
-      <p>Enter your secure token to access your guide:</p>
-      <form id="tokenForm">
-        <input type="text" id="tokenInput" name="token" placeholder="Enter your token" required />
-        <button type="submit">Access My Guide</button>
-        <div id="loading">Validating token…</div>
-        <div id="error">Invalid token. Please check and try again.</div>
-      </form>
-    </section>
+
+  <main>
+    <!-- Your original pricing, token redemption, and footer sections go here -->
   </main>
 
   <footer>
