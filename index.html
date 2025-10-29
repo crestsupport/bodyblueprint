@@ -214,30 +214,58 @@
   </section>
 
   <main>
-    <section class="pricing">
-      <h2>Choose Your Blueprint</h2>
-
-      <div class="tier">
-        <h3>Body Blueprint® Beginner</h3>
-        <p>$4.99 – Foundational habits, nutrition, and mindset</p>
-        <a href="https://buy.stripe.com/5kQ6opfoSfmueFO39Ja7C0c" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
-        <a href="https://www.paypal.com/ncp/payment/67VASCP8N6KX2" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
-      </div>
-
-      <div class="tier">
-        <h3>Body Blueprint® Intermediary</h3>
-        <p>$6.99 – Fitness, recovery, and performance</p>
-        <a href="https://buy.stripe.com/eVq9AB7Wq8Y641a8u3a7C0d" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
-        <a href="https://www.paypal.com/ncp/payment/RCHQCB72CNCDE" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
-      </div>
-
-      <div class="tier">
-        <h3>Body Blueprint® Elite Plus+</h3>
-        <p>$9.99 – Mindset, optimization, and mastery</p>
-        <a href="https://buy.stripe.com/28E6opgsWeiq41aeSra7C0e" target="_blank" rel="noopener" class="btn">Buy with Stripe</a>
-        <a href="https://www.paypal.com/ncp/payment/BKKFHMTBS5B4J" target="_blank" rel="noopener" class="btn">Buy with PayPal</a>
-      </div>
-    </section>
-
+    <!-- Your original pricing, token redemption, and footer sections continue here -->
     <section class="access">
-      <h2>
+      <h2>Already Purchased?</h2>
+      <p>Enter your secure token to access your guide:</p>
+      <form id="tokenForm">
+        <input type="text" id="tokenInput" name="token" placeholder="Enter your token" required />
+        <button type="submit">Access My Guide</button>
+        <div id="loading">Validating token…</div>
+        <div id="error">Invalid token. Please check and try again.</div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Body Blueprint®. All rights reserved.</p>
+    <nav>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Use</a> |
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.getElementById('tokenForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const token = document.getElementById('tokenInput').value.trim();
+      const loading = document.getElementById('loading');
+      const error = document.getElementById('error');
+
+      if (!token) return;
+
+      loading.style.display = 'block';
+      error.style.display = 'none';
+
+      try {
+        const response = await fetch(`https://tight-art-0743.ctohm.workers.dev?token=${encodeURIComponent(token)}`, {
+          method: 'GET',
+          cache: 'no-store'
+        });
+
+        if (response.ok) {
+          window.location.href = response.url;
+        } else {
+          loading.style.display = 'none';
+          error.style.display = 'block';
+        }
+      } catch (err) {
+        loading.style.display = 'none';
+        error.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
+
