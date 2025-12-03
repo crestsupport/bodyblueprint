@@ -7,45 +7,82 @@
   <meta name="description" content="Discover practical nutrition and lifestyle strategies with Body Blueprint® guides. Build sustainable habits for long-term health and wellness."/>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: #f9fbfd;
       color: #333;
     }
     header {
-      background: #4A90E2;
+      background: linear-gradient(135deg, #4A90E2, #357ABD);
       color: #fff;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
     h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.1em;
+      opacity: 0.9;
     }
     .section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 1200px;
       margin: auto;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .section p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.05em;
+      line-height: 1.7;
+      color: #555;
     }
     .tiers {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
+      margin-top: 40px;
     }
     .tier {
-      flex: 1 1 0;
-      max-width: 300px;
-      border: 1px solid #ddd;
+      flex: 1 1 280px;
+      max-width: 320px;
+      border: 1px solid #e0e0e0;
       background: #fff;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .tier:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     }
     .tier img {
       max-width: 100%;
       height: auto;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .tier h3 {
+      margin: 10px 0;
+      font-size: 1.4em;
+      color: #333;
+    }
+    .tier p {
+      font-size: 0.95em;
+      color: #666;
       margin-bottom: 15px;
     }
     .price {
@@ -56,35 +93,33 @@
     .strike {
       text-decoration: line-through;
       color: #777;
+      margin-right: 5px;
     }
     .payment-buttons a {
       display: inline-block;
-      margin: 5px;
-      padding: 10px 15px;
-      background: #005fa3;
+      margin: 6px;
+      padding: 10px 18px;
+      background: #4A90E2;
       color: #fff;
       text-decoration: none;
       border-radius: 4px;
+      font-size: 0.95em;
+      transition: background 0.2s ease;
     }
     .payment-buttons a:hover {
-      background: #004080;
-    }
-    .best-value {
-      background: #e63946;
-      color: #fff;
-      padding: 5px;
-      font-size: 0.9em;
-      margin-bottom: 10px;
+      background: #357ABD;
     }
     footer {
       background: #f4f4f4;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
       font-size: 0.9em;
+      border-top: 1px solid #e0e0e0;
     }
     footer a {
       color: #4A90E2;
       text-decoration: none;
+      margin: 0 8px;
     }
     footer a:hover {
       text-decoration: underline;
@@ -110,7 +145,7 @@
         <img src="images/01-beginner-cover.png" alt="Beginner Tier Cover" />
         <h3>Beginner</h3>
         <p>Foundational recipes and lifestyle strategies.</p>
-        <div class="price"><span class="strike">$12.99</span> → <strong>$6.99</strong></div>
+        <div class="price"><span class="strike">$12.99</span> <strong>$6.99</strong></div>
         <div class="payment-buttons">
           <a href="https://buy.stripe.com/bJe289b8C2zI2X625Fa7C0i" target="_blank" rel="noopener noreferrer">Buy with Stripe</a>
           <a href="https://www.paypal.com/ncp/payment/67VASCP8N6KX2" target="_blank" rel="noopener noreferrer">Buy with PayPal</a>
@@ -122,7 +157,7 @@
         <img src="images/01-intermediary-cover.png" alt="Intermediary Tier Cover" />
         <h3>Intermediary</h3>
         <p>Deeper sequencing and enhanced wellness practices.</p>
-        <div class="price"><span class="strike">$16.99</span> → <strong>$7.99</strong></div>
+        <div class="price"><span class="strike">$16.99</span> <strong>$7.99</strong></div>
         <div class="payment-buttons">
           <a href="https://buy.stripe.com/7sYfYZb8Cfmu8hq8u3a7C0g" target="_blank" rel="noopener noreferrer">Buy with Stripe</a>
           <a href="https://www.paypal.com/ncp/payment/RCHQCB72CNCDE" target="_blank" rel="noopener noreferrer">Buy with PayPal</a>
@@ -131,11 +166,10 @@
 
       <!-- Elite-Plus Tier -->
       <div class="tier">
-        <div class="best-value">Best Value</div>
         <img src="images/01-eliteplus-cover.png" alt="Elite-Plus Tier Cover" />
         <h3>Elite-Plus</h3>
         <p>90 recipes, advanced strategies, and lifestyle mastery.</p>
-        <div class="price"><span class="strike">$24.99</span> → <strong>$9.99</strong></div>
+        <div class="price"><span class="strike">$24.99</span> <strong>$9.99</strong></div>
         <div class="payment-buttons">
           <a href="https://buy.stripe.com/eVq1453Ga0rA1T2cKja7C0h" target="_blank" rel="noopener noreferrer">Buy with Stripe</a>
           <a href="https://www.paypal.com/ncp/payment/BKKFHMTBS5B4J" target="_blank" rel="noopener noreferrer">Buy with PayPal</a>
@@ -144,12 +178,15 @@
     </div>
   </div>
 
- <footer>
-  <p>© 2025 Body Blueprint®</p>
-  <p>
-    <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms</a> |
-    <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a> |
-    <a href="disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a>
-  </p>
-</footer>
+  <footer>
+    <p>© 2025 Body Blueprint®</p>
+    <p>
+      <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms</a> |
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a> |
+      <a href="disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a>
+    </p>
+  </footer>
+</body>
+</html>
+
 
