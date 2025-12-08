@@ -13,42 +13,11 @@
       background: #f9fbfd;
       color: #333;
     }
-
-    /* ✅ Background Video */
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -2;
-    }
-    .video-background video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(55%);
-    }
-
-    /* ✅ Overlay for readability */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: -1;
-    }
-
     header {
       background: linear-gradient(135deg, #4A90E2, #357ABD);
       color: #fff;
       padding: 40px 20px;
       text-align: center;
-      position: relative;
-      z-index: 10;
     }
     h1 {
       margin: 0;
@@ -65,20 +34,18 @@
       max-width: 1200px;
       margin: auto;
       text-align: center;
-      position: relative;
-      z-index: 10;
     }
     .section h2 {
       font-size: 1.8em;
       margin-bottom: 20px;
-      color: #fff;
+      color: #222;
     }
     .section p {
       max-width: 800px;
       margin: auto;
       font-size: 1.05em;
       line-height: 1.7;
-      color: #eee;
+      color: #555;
     }
     .tiers {
       display: flex;
@@ -90,18 +57,17 @@
     .tier {
       flex: 1 1 280px;
       max-width: 320px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.1);
+      border: 1px solid #e0e0e0;
+      background: #fff;
       padding: 25px;
       text-align: center;
       border-radius: 8px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
     .tier:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     }
     .tier img {
       max-width: 100%;
@@ -112,21 +78,21 @@
     .tier h3 {
       margin: 10px 0;
       font-size: 1.4em;
-      color: #fff;
+      color: #333;
     }
     .tier p {
       font-size: 0.95em;
-      color: #ddd;
+      color: #666;
       margin-bottom: 15px;
     }
     .price {
       font-size: 1.2em;
-      color: #ffb4b4;
+      color: #e63946;
       margin: 10px 0;
     }
     .strike {
       text-decoration: line-through;
-      color: #ccc;
+      color: #777;
       margin-right: 5px;
     }
     .payment-buttons a {
@@ -144,14 +110,11 @@
       background: #357ABD;
     }
     footer {
-      background: rgba(255,255,255,0.1);
+      background: #f4f4f4;
       padding: 25px;
       text-align: center;
       font-size: 0.9em;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      position: relative;
-      z-index: 10;
-      color: #fff;
+      border-top: 1px solid #e0e0e0;
     }
     footer a {
       color: #4A90E2;
@@ -163,19 +126,7 @@
     }
   </style>
 </head>
-
 <body>
-
-  <!-- ✅ Background Video -->
-  <div class="video-background">
-    <video autoplay muted loop playsinline>
-      <source src="/images/video-glp1.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- ✅ Overlay -->
-  <div class="overlay"></div>
-
   <header>
     <h1>Body Blueprint®</h1>
     <p>Build sustainable habits for long-term health and wellness</p>
@@ -189,7 +140,6 @@
   <div class="section">
     <h2>🔥 Sale — 50% Off All Tiers</h2>
     <div class="tiers">
-
       <!-- Beginner Tier -->
       <div class="tier">
         <img src="images/01-beginner-cover.png" alt="Beginner Tier Cover" />
@@ -197,8 +147,8 @@
         <p>Foundational recipes and lifestyle strategies.</p>
         <div class="price"><span class="strike">$12.99</span> <strong>$6.99</strong></div>
         <div class="payment-buttons">
-          <a href="https://buy.stripe.com/bJe289b8C2zI2X625Fa7C0i" target="_blank">Buy with Stripe</a>
-          <a href="https://www.paypal.com/ncp/payment/67VASCP8N6KX2" target="_blank">Buy with PayPal</a>
+          <a href="https://buy.stripe.com/bJe289b8C2zI2X625Fa7C0i" target="_blank" rel="noopener noreferrer">Buy with Stripe</a>
+          <a href="https://www.paypal.com/ncp/payment/67VASCP8N6KX2" target="_blank" rel="noopener noreferrer">Buy with PayPal</a>
         </div>
       </div>
 
@@ -209,8 +159,8 @@
         <p>Deeper sequencing and enhanced wellness practices.</p>
         <div class="price"><span class="strike">$16.99</span> <strong>$7.99</strong></div>
         <div class="payment-buttons">
-          <a href="https://buy.stripe.com/7sYfYZb8Cfmu8hq8u3a7C0g" target="_blank">Buy with Stripe</a>
-          <a href="https://www.paypal.com/ncp/payment/RCHQCB72CNCDE" target="_blank">Buy with PayPal</a>
+          <a href="https://buy.stripe.com/7sYfYZb8Cfmu8hq8u3a7C0g" target="_blank" rel="noopener noreferrer">Buy with Stripe</a>
+          <a href="https://www.paypal.com/ncp/payment/RCHQCB72CNCDE" target="_blank" rel="noopener noreferrer">Buy with PayPal</a>
         </div>
       </div>
 
@@ -221,25 +171,21 @@
         <p>90 recipes, advanced strategies, and lifestyle mastery.</p>
         <div class="price"><span class="strike">$24.99</span> <strong>$9.99</strong></div>
         <div class="payment-buttons">
-          <a href="https://buy.stripe.com/eVq1453Ga0rA1T2cKja7C0h" target="_blank">Buy with Stripe</a>
-          <a href="https://www.paypal.com/ncp/payment/BKKFHMTBS5B4J" target="_blank">Buy with PayPal</a>
+          <a href="https://buy.stripe.com/eVq1453Ga0rA1T2cKja7C0h" target="_blank" rel="noopener noreferrer">Buy with Stripe</a>
+          <a href="https://www.paypal.com/ncp/payment/BKKFHMTBS5B4J" target="_blank" rel="noopener noreferrer">Buy with PayPal</a>
         </div>
       </div>
-
     </div>
   </div>
 
-  <footer>
-    <p>© 2025 Body Blueprint®</p>
-    <p>
-      <a href="aboutus.html" target="_blank">About Us</a> |
-      <a href="terms.html" target="_blank">Terms</a> |
-      <a href="privacy.html" target="_blank">Privacy</a> |
-      <a href="disclaimer.html" target="_blank">Disclaimer</a>
-    </p>
-  </footer>
-
-</body>
-</html>
+ <footer>
+  <p>© 2025 Body Blueprint®</p>
+  <p>
+    <a href="aboutus.html" target="_blank" rel="noopener noreferrer">About Us</a> |
+    <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms</a> |
+    <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a> |
+    <a href="disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a>
+  </p>
+</footer>
 
 
