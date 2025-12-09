@@ -40,16 +40,19 @@
       position: relative;
       z-index: 10;
     }
+
     h1 {
       margin: 0;
       font-size: 2.5em;
       letter-spacing: 1px;
     }
+
     header p {
       margin-top: 10px;
       font-size: 1.1em;
       opacity: 0.9;
     }
+
     .section {
       padding: 50px 20px;
       max-width: 1200px;
@@ -58,18 +61,22 @@
       position: relative;
       z-index: 10;
     }
+
+    /* ✅ Make intro text white for readability */
     .section h2 {
       font-size: 1.8em;
       margin-bottom: 20px;
-      color: #222;
+      color: #ffffff !important;
     }
+
     .section p {
       max-width: 800px;
       margin: auto;
       font-size: 1.05em;
       line-height: 1.7;
-      color: #555;
+      color: #f1f1f1 !important;
     }
+
     .tiers {
       display: flex;
       flex-wrap: wrap;
@@ -77,6 +84,7 @@
       gap: 30px;
       margin-top: 40px;
     }
+
     .tier {
       flex: 1 1 280px;
       max-width: 320px;
@@ -90,36 +98,43 @@
       position: relative;
       z-index: 10;
     }
+
     .tier:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     }
+
     .tier img {
       max-width: 100%;
       height: auto;
       margin-bottom: 20px;
       border-radius: 4px;
     }
+
     .tier h3 {
       margin: 10px 0;
       font-size: 1.4em;
       color: #333;
     }
+
     .tier p {
       font-size: 0.95em;
       color: #666;
       margin-bottom: 15px;
     }
+
     .price {
       font-size: 1.2em;
       color: #e63946;
       margin: 10px 0;
     }
+
     .strike {
       text-decoration: line-through;
       color: #777;
       margin-right: 5px;
     }
+
     .payment-buttons a {
       display: inline-block;
       margin: 6px;
@@ -131,9 +146,11 @@
       font-size: 0.95em;
       transition: background 0.2s ease;
     }
+
     .payment-buttons a:hover {
       background: #357ABD;
     }
+
     footer {
       background: #f4f4f4;
       padding: 25px;
@@ -143,11 +160,13 @@
       position: relative;
       z-index: 10;
     }
+
     footer a {
       color: #4A90E2;
       text-decoration: none;
       margin: 0 8px;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
@@ -173,10 +192,13 @@
     <p>Body Blueprint® provides affordable, easy-to-follow guides that help you explore balanced eating, practical fitness routines, and sustainable lifestyle choices. Our resources are designed to support your journey toward improved energy, focus, and overall well-being.</p>
   </div>
 
-  <div class="section">
+  <!-- ✅ Push tier section down to reveal more video -->
+  <div class="section" style="padding-top: 180px;">
     <h2>🔥 Sale — 50% Off All Tiers</h2>
+
     <div class="tiers">
 
+      <!-- Beginner Tier -->
       <div class="tier">
         <img src="images/01-beginner-cover.png" alt="Beginner Tier Cover" />
         <h3>Beginner</h3>
@@ -188,6 +210,7 @@
         </div>
       </div>
 
+      <!-- Intermediary Tier -->
       <div class="tier">
         <img src="images/01-intermediary-cover.png" alt="Intermediary Tier Cover" />
         <h3>Intermediary</h3>
@@ -199,6 +222,7 @@
         </div>
       </div>
 
+      <!-- Elite-Plus Tier -->
       <div class="tier">
         <img src="images/01-eliteplus-cover.png" alt="Elite-Plus Tier Cover" />
         <h3>Elite-Plus</h3>
@@ -225,3 +249,4 @@
 
 </body>
 </html>
+
