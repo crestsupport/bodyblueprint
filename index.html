@@ -34,11 +34,12 @@
 
     /* ✅ Top navigation buttons */
     .top-nav {
-      background: rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.45);
       padding: 15px;
       text-align: center;
       position: relative;
       z-index: 20;
+      backdrop-filter: blur(4px);
     }
     .top-nav a {
       display: inline-block;
@@ -176,22 +177,21 @@
       background: #357ABD;
     }
 
-    footer {
-      display: none; /* ✅ Footer hidden since links moved to top */
-    }
+    /* ✅ Footer removed */
+    footer { display: none; }
   </style>
 </head>
 
 <body>
 
-  <!-- ✅ Background Video (RAW GitHub URL) -->
+  <!-- ✅ Background Video -->
   <div class="video-bg">
     <video autoplay muted loop playsinline>
       <source src="https://raw.githubusercontent.com/crestsupport/bodyblueprint/main/images/video-glp1.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- ✅ Top Navigation Buttons -->
+  <!-- ✅ Top Navigation Buttons (NOW VISIBLE) -->
   <div class="top-nav">
     <a href="aboutus.html" target="_blank">About Us</a>
     <a href="terms.html" target="_blank">Terms</a>
@@ -244,4 +244,15 @@
         <img src="images/01-eliteplus-cover.png" alt="Elite-Plus Tier Cover" />
         <h3>Elite-Plus</h3>
         <p>90 recipes, advanced strategies, and lifestyle mastery.</p>
-        <div class="price"><span class="strike">$24.99</span> <strong>$9
+        <div class="price"><span class="strike">$24.99</span> <strong>$9.99</strong></div>
+        <div class="payment-buttons">
+          <a href="https://buy.stripe.com/eVq1453Ga0rA1T2cKja7C0h" target="_blank">Buy with Stripe</a>
+          <a href="https://www.paypal.com/ncp/payment/BKKFHMTBS5B4J" target="_blank">Buy with PayPal</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
